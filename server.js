@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const articleRouter = require("./routes/articles")
 const router = express.Router()
+const mongoose = require("mongoose")
 
 app.set("view engine","ejs")
 
@@ -25,7 +26,7 @@ app.get("/", (req,res)=>{
     },
 
 ]
-    res.render("index", {articles: articles})
+    res.render("articles/index", {articles: articles})
 })
 
 app.listen(3000)
